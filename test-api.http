@@ -1,0 +1,70 @@
+// PLEASE DOWNLOAD EXTENSION "REST CLIENT" IN VISUAL STUDIO CODE TO USE
+// OR USE POST MAN WITH URL BELOW
+
+
+// ROUTE "ADD USER" //
+### // Success
+POST http://localhost:8000/user/add
+Content-Type: application/json
+
+{
+ "firstName" : "Huy",
+ "lastName" : "Nguyen", 
+ "age" : "21",
+ "coordinate" : "306:201"
+}
+### // Fail
+POST http://localhost:8000/user/add
+Content-Type: application/json
+
+{
+ "firstName" : "Huy",
+ "lastName" : "Nguyen" 
+}
+
+
+// ROUTE "GET USER BY ID" //
+### // Success
+GET http://localhost:8000/user/read?id=d471b51a-8b71-406b-8d33-35b5a5f85a82
+### //Fai;
+GET http://localhost:8000/user/read?id=1921006708
+
+
+// ROUTE "FIND USERS BY NAME" //
+### // Success
+GET http://localhost:8000/user/search?name=Huy
+### // Fail
+GET http://localhost:8000/user/search?name=abc
+
+
+// ROUTE "UPDATE USER" //
+### // Success
+PUT http://localhost:8000/user/edit/d471b51a-8b71-406b-8d33-35b5a5f85a82
+Content-Type: application/json
+
+{
+ "firstName" : "Quoc Huy",
+ "lastName" : "Nguyen Vo"
+}
+### // Fail
+PUT http://localhost:8000/user/edit/1921006708
+Content-Type: application/json
+
+{
+ "firstName" : "Quoc Huy",
+ "lastName" : "Nguyen Vo"
+}
+
+
+// ROUTE "DELETE USER" //
+### // Success
+DELETE http://localhost:8000/user/edit/d471b51a-8b71-406b-8d33-35b5a5f85a82
+### // Fail
+DELETE http://localhost:8000/user/edit/1921006708
+
+
+// ROUTE "GET USERS BY ID" //
+### // Success
+GET http://localhost:8000/user/locate?n=2&userId=d471b51a-8b71-406b-8d33-35b5a5f85a82
+### // Fail
+GET http://localhost:8000/user/locate?n=2&userId=1921006708
